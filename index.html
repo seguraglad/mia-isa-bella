@@ -466,36 +466,40 @@
     © 2025 Finca Mía Isa-Bella · Valle Azul, San Ramón, Alajuela · Costa Rica
   </footer>
 
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("navLinks");
+ <script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
 
-    // abrir / cerrar
-    hamburger.addEventListener("click", (e) => {
-      e.stopPropagation();
-      navLinks.classList.toggle("show");
-    });
+  // abrir / cerrar
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    navLinks.classList.toggle("show");
+  });
 
-    // cerrar al hacer clic en un enlace
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("show");
-      });
-    });
-
-    // cerrar si tocan fuera
-    document.addEventListener("click", (e) => {
-      if (navLinks.classList.contains("show") &&
-          !navLinks.contains(e.target) &&
-          !hamburger.contains(e.target)) {
-        navLinks.classList.remove("show");
-      }
-    });
-
-    // cerrar al hacer scroll
-    window.addEventListener("scroll", () => {
+  // cerrar al hacer clic en un enlace (ahora busca dentro del menú)
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
       navLinks.classList.remove("show");
     });
-  </script>
+  });
+
+  // cerrar si tocan fuera
+  document.addEventListener("click", (e) => {
+    if (
+      navLinks.classList.contains("show") &&
+      !navLinks.contains(e.target) &&
+      !hamburger.contains(e.target)
+    ) {
+      navLinks.classList.remove("show");
+    }
+  });
+
+  // cerrar al hacer scroll
+  window.addEventListener("scroll", () => {
+    navLinks.classList.remove("show");
+  });
+</script>
+
 </body>
 </html>
+
