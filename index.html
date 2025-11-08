@@ -46,6 +46,7 @@
     }
     .logo span { color: var(--verde); }
 
+    /* menú móvil (oculto por defecto) */
     .nav-links {
       position: absolute;
       top: 58px;
@@ -58,6 +59,7 @@
       border: 1px solid rgba(27,48,35,.06);
       border-radius: 12px;
       display: none;
+      list-style: none;
     }
     .nav-links a {
       text-decoration: none;
@@ -79,6 +81,7 @@
       background: var(--oscuro);
     }
 
+    /* escritorio */
     @media (min-width: 1024px) {
       .nav-links {
         position: static;
@@ -88,7 +91,17 @@
         width: auto;
         border: none;
         padding: 0;
-        gap: 1rem;
+        gap: 2rem;
+        align-items: center;
+      }
+      .nav-links li a {
+        text-decoration: none;
+        color: #1a1a1a;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+      .nav-links li a:hover {
+        color: #1b4d3e;
       }
       .hamburger { display: none; }
     }
@@ -195,31 +208,6 @@
       align-items: start;
     }
 
-    /* TARJETAS -------------------------------------------------- */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 1.4rem;
-    }
-    .feature {
-      background: #fff;
-      border-radius: 16px;
-      padding: 1rem 1rem 1.2rem 1rem;
-      box-shadow: 0 20px 40px -32px rgba(0,0,0,.3);
-      border: 1px solid var(--borde);
-    }
-    .badge {
-      display: inline-block;
-      background: rgba(36,91,61,.12);
-      color: var(--verde);
-      padding: .25rem .6rem;
-      border-radius: 999px;
-      font-size: .6rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: .45rem;
-    }
-
     /* GALERÍA --------------------------------------------------- */
     .galeria {
       display: grid;
@@ -294,26 +282,6 @@
       }
       .hero-img { min-height: 220px; }
     }
-    /* Navegación limpia */
-.nav-links {
-  list-style: none;              /* Quita los puntos (•) */
-  display: flex;                 /* Coloca los elementos en línea */
-  gap: 2rem;                     /* Espacio entre cada enlace */
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #1a1a1a;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-  color: #1b4d3e;                /* Verde de acento al pasar el mouse */
-}
 
   </style>
 </head>
@@ -338,168 +306,163 @@
 
   <!-- HERO -->
   <main id="inicio">
-  <section class="hero">
-    <div>
-      <span class="tagline">Valle Azul · San Ramón · Alajuela</span>
-      <h1>Finca Mía Isa-Bella<br>un refugio natural para desconectarte.</h1>
-      <p>
-        Amaneceres con canto de aves, río dentro de la propiedad y perezosos en los árboles. 
-        Ideal para familia o pareja que busca paz y naturaleza.
-      </p>
-      <div class="hero-buttons">
-        <a href="#contacto" class="btn-primary">Reservar ahora</a>
-        <a href="https://maps.app.goo.gl/RtSTeGe2fd68MupHA" 
-           target="_blank" 
-           class="btn-secondary">
-           📍 Ver ubicación
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-img">
-      <!-- Imagen principal -->
-      <img src="./Img/Perezoso.jpg" alt="Perezoso en la finca" 
-           style="object-fit:cover; width:100%; height:100%; border-radius:24px;">
-    </div>
-  </section>
-</main>
-
-
-    <!-- LA FINCA -->
-    <section id="finca">
-      <div class="section-title">
-        <h2>Un refugio natural en Valle Azul</h2>
+    <section class="hero">
+      <div>
+        <span class="tagline">Valle Azul · San Ramón · Alajuela</span>
+        <h1>Finca Mía Isa-Bella<br>un refugio natural para desconectarte.</h1>
         <p>
-          Entre árboles majestuosos, vacas que pastan en calma y el murmullo constante del río, esta finca es un rincón ideal para desconectarte del ruido y respirar tranquilidad. 
-          A solo 40 minutos de La Fortuna, ofrece un entorno donde la naturaleza sigue marcando el ritmo de la vida. Podrás observar monos cariblancos saboreando mamones chinos, perezosos descansando entre las ramas y una vegetación siempre verde que te abraza en cualquier época del año. Bajo la sombra de frondosos árboles y rodeada de un silencio que reconforta, esta finca se convierte en un espacio para reencontrarte con lo esencial. Cada rincón invita a disfrutar del presente sin prisa, con la serenidad que solo la naturaleza puede ofrecer
+          Amaneceres con canto de aves, río dentro de la propiedad y perezosos en los árboles. 
+          Ideal para familia o pareja que busca paz y naturaleza.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contacto" class="btn-primary">Reservar ahora</a>
+          <a href="https://maps.app.goo.gl/RtSTeGe2fd68MupHA" 
+            target="_blank" 
+            class="btn-secondary">
+            📍 Ver ubicación
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-img">
+        <img src="./Img/Perezoso.jpg" alt="Perezoso en la finca" 
+          style="object-fit:cover; width:100%; height:100%; border-radius:24px;">
+      </div>
+    </section>
+  </main>
+
+  <!-- LA FINCA -->
+  <section id="finca">
+    <div class="section-title">
+      <h2>Un refugio natural en Valle Azul</h2>
+      <p>
+        Entre árboles majestuosos, vacas que pastan en calma y el murmullo constante del río, esta finca es un rincón ideal para desconectarte del ruido y respirar tranquilidad. 
+        A solo 40 minutos de La Fortuna, ofrece un entorno donde la naturaleza sigue marcando el ritmo de la vida.
+      </p>
+    </div>
+    <div class="two-cols">
+      <div>
+        <p>En sus alrededores te esperan experiencias únicas: la imponente vista del volcán Arenal, su laguna de aguas tranquilas, relajantes aguas termales y senderos que te adentran en la esencia viva del bosque tropical.</p>
+      </div>
+      <div class="feature" style="border-radius:16px;">
+        <h3>Reservaciones y contacto</h3>
+        <p><strong>Correo:</strong> <a href="mailto:kinesisterapiacorporal@gmail.com">kinesisterapiacorporal@gmail.com</a></p>
+        <p><strong>Gladys Segura Boza:</strong> <a href="tel:+50688770911">+506 8877-0911</a></p>
+        <p><strong>Mario Perez Torres (México):</strong> <a href="tel:+524421776275">+52 442 177 6275</a></p>
+        <p style="margin-top:.5rem;font-size:.85rem;">
+          Indicá fecha, cantidad de personas y si desean tours en La Fortuna.
         </p>
       </div>
-      <div class="two-cols">
-        <div>
-          <p>En sus alrededores te esperan experiencias únicas: la imponente vista del volcán Arenal, su laguna de aguas tranquilas, relajantes aguas termales y senderos que te adentran en la esencia viva del bosque tropical..</p>
-          <p></p>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria">
+    <div class="section-title">
+      <h2>Galería</h2>
+      <p>Imágenes de nuestras instalaciones.</p>
+    </div>
+    <div class="galeria">
+      <img src="./Img/a _travez _de_la_ventana.jpg" alt="Vista desde la ventana">
+      <img src="./Img/Techo.jpg" alt="Techo de madera interior">
+      <img src="./Img/Jacuzzi.jpg" alt="Jacuzzi en el bosque">
+      <img src="./Img/Terraza.jpg" alt="Terraza y zona de descanso">
+      <img src="./Img/Sala_mesa.jpg" alt="Cocina y sala">
+      <img src="./Img/Dormitorio_Sala.jpg" alt="Área de camas y sala">
+      <img src="./Img/domirtorio_sala3.jpg" alt="Otra vista interior">
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="section-title">
+      <h2>Hablemos de tu estadía</h2>
+      <p>Contanos la fecha, cuántas personas vienen y si querés visitar La Fortuna.</p>
+    </div>
+
+    <div class="form-wrapper">
+      <form action="mailto:kinesisterapiacorporal@gmail.com" method="post" enctype="text/plain">
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="Nombre" placeholder="Tu nombre" required>
         </div>
-        <div class="feature" style="border-radius:16px;">
-          <h3>Reservaciones y contacto</h3>
-          <p><strong>Correo:</strong> <a href="mailto:kinesisterapiacorporal@gmail.com">kinesisterapiacorporal@gmail.com</a></p>
-          <p><strong>Gladys Segura Boza:</strong> <a href="tel:+50688770911">+506 8877-0911</a></p>
-          <p><strong>Mario Perez Torres (México):</strong> <a href="tel:+524421776275">+52 442 177 6275</a></p>
-          <p style="margin-top:.5rem;font-size:.85rem;">
-            Indicá fecha, cantidad de personas y si desean tours en La Fortuna.
-          </p>
+        <div class="form-group">
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" name="Correo" placeholder="tucorreo@ejemplo.com" required>
         </div>
-      </div>
-    </section>
+        <div class="form-group">
+          <label for="tel">Teléfono</label>
+          <input type="tel" id="tel" name="Teléfono" placeholder="+506 ..." required>
+        </div>
+        <div class="form-group">
+          <label for="detalle">Detalles de la visita</label>
+          <textarea id="detalle" name="Mensaje" placeholder="Fechas, cantidad de personas, si quieren aguas termales, etc."></textarea>
+        </div>
+        <button type="submit" class="btn-form">Enviar</button>
+      </form>
+    </div>
 
-    <!-- GALERÍA -->
-    <section id="galeria">
-      <div class="section-title">
-        <h2>Galería</h2>
-        <p>Imagenes de nuestra instalaciones.</p>
-      </div>
-      <div class="galeria">
-        <img src="./Img/a _travez _de_la_ventana.jpg" alt="Vista desde la ventana">
-        <img src="./Img/Techo.jpg" alt="Techo de madera interior">
-        <img src="./Img/Jacuzzi.jpg" alt="Jacuzzi en el bosque">
-        <img src="./Img/Terraza.jpg" alt="Terraza y zona de descanso">
-        <img src="./Img/Sala_mesa.jpg" alt="Cocina y sala">
-        <img src="./Img/Dormitorio_Sala.jpg" alt="Área de camas y sala">
-        <img src="./Img/domirtorio_sala3.jpg" alt="Otra vista interior">
-      </div>
-    </section>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="https://maps.app.goo.gl/RtSTeGe2fd68MupHA"
+        target="_blank"
+        style="display:inline-block; background:#1b4d3e; color:#fff; padding:12px 24px; border-radius:10px; text-decoration:none; font-weight:600;">
+        📍 Ver ubicación en Google Maps
+      </a>
+    </div>
 
-    <!-- CONTACTO (Reformado con Mapa) -->
-<section id="contacto">
-  <div class="section-title">
-    <h2>Hablemos de tu estadía</h2>
-    <p>Contanos la fecha, cuántas personas vienen y si querés visitar La Fortuna.</p>
-  </div>
-
-  <div class="form-wrapper">
-    <form action="mailto:kinesisterapiacorporal@gmail.com" method="post" enctype="text/plain">
-      <div class="form-group">
-        <label for="nombre">Nombre completo</label>
-        <input type="text" id="nombre" name="Nombre" placeholder="Tu nombre" required>
-      </div>
-      <div class="form-group">
-        <label for="correo">Correo</label>
-        <input type="email" id="correo" name="Correo" placeholder="tucorreo@ejemplo.com" required>
-      </div>
-      <div class="form-group">
-        <label for="tel">Teléfono</label>
-        <input type="tel" id="tel" name="Teléfono" placeholder="+506 ..." required>
-      </div>
-      <div class="form-group">
-        <label for="detalle">Detalles de la visita</label>
-        <textarea id="detalle" name="Mensaje" placeholder="Fechas, cantidad de personas, si quieren aguas termales, etc."></textarea>
-      </div>
-      <button type="submit" class="btn-form">Enviar</button>
-    </form>
-  </div>
-
-  <!-- Botón Google Maps -->
-  <div style="text-align:center; margin-top:2rem;">
-    <a href="https://maps.app.goo.gl/RtSTeGe2fd68MupHA"
-       target="_blank"
-       style="display:inline-block; background:#1b4d3e; color:#fff; padding:12px 24px; border-radius:10px; text-decoration:none; font-weight:600;">
-       📍 Ver ubicación en Google Maps
-    </a>
-  </div>
-
-  <!-- Mapa incrustado -->
-  <!-- Mapa incrustado -->
-<div style="margin-top:2rem; display:flex; justify-content:center;">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3931.116046537419!2d-84.5630064!3d10.320856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa06d0001bdd071%3A0x447aa497b3551aab!2sFinca%20Mia%20Isa-bella!5e0!3m2!1ses!2scr!4v1701200000000!5m2!1ses!2scr"
-    width="600" height="400"
-    style="border:0; border-radius:12px; max-width:90%;"
-    allowfullscreen
-    loading="lazy">
-  </iframe>
-</div>
-
-</section>
-
-  </main>
+    <div style="margin-top:2rem; display:flex; justify-content:center;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3931.116046537419!2d-84.5630064!3d10.320856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa06d0001bdd071%3A0x447aa497b3551aab!2sFinca%20Mia%20Isa-bella!5e0!3m2!1ses!2scr!4v1701200000000!5m2!1ses!2scr"
+        width="600" height="400"
+        style="border:0; border-radius:12px; max-width:90%;"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
 
   <footer>
     © 2025 Finca Mía Isa-Bella · Valle Azul, San Ramón, Alajuela · Costa Rica
   </footer>
 
- <script>
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("navLinks");
+  <script>
+    // versión compatible
+    var hamburger = document.getElementById("hamburger");
+    var navLinks = document.getElementById("navLinks");
 
-  // abrir / cerrar
-  hamburger.addEventListener("click", (e) => {
-    e.stopPropagation();
-    navLinks.classList.toggle("show");
-  });
+    // abrir / cerrar
+    hamburger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (navLinks.classList.contains("show")) {
+        navLinks.classList.remove("show");
+      } else {
+        navLinks.classList.add("show");
+      }
+    });
 
-  // cerrar al hacer clic en un enlace (ahora busca dentro del menú)
-  navLinks.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
+    // cerrar al hacer clic en un enlace dentro del menú
+    var enlaces = navLinks.querySelectorAll("a");
+    for (var i = 0; i < enlaces.length; i++) {
+      enlaces[i].addEventListener("click", function () {
+        navLinks.classList.remove("show");
+      });
+    }
+
+    // cerrar si tocan fuera
+    document.addEventListener("click", function (e) {
+      if (
+        navLinks.classList.contains("show") &&
+        !navLinks.contains(e.target) &&
+        !hamburger.contains(e.target)
+      ) {
+        navLinks.classList.remove("show");
+      }
+    });
+
+    // cerrar al hacer scroll
+    window.addEventListener("scroll", function () {
       navLinks.classList.remove("show");
     });
-  });
-
-  // cerrar si tocan fuera
-  document.addEventListener("click", (e) => {
-    if (
-      navLinks.classList.contains("show") &&
-      !navLinks.contains(e.target) &&
-      !hamburger.contains(e.target)
-    ) {
-      navLinks.classList.remove("show");
-    }
-  });
-
-  // cerrar al hacer scroll
-  window.addEventListener("scroll", () => {
-    navLinks.classList.remove("show");
-  });
-</script>
-
+  </script>
 </body>
 </html>
-
